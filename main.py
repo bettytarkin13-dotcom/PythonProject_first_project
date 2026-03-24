@@ -38,4 +38,11 @@ def get_move(player,board):
         else:
             print("invalid input,please enter a number 1-9")
 
+def make_move(board,position,symbol):
+    """
+    Updates the board list by placing the player's symbol ('x' or 'o')
+    at the chosen position.
+    """
+    board[position-1]=symbol
+
 
