@@ -51,18 +51,21 @@ def check_winner(board,symbol):
     in any row,column or diagonal on the board.
     Return True if the player has won, False otherwise.
     """
-    for row in [0,3,6]:
-        if board [row] == board[row+1]==board[row+2]==symbol:
+    for row in [0, 3, 6]:
+        if board[row] == board[row + 1] == board[row + 2] == symbol:
             return True
 
-    for col in [0,3,6]:
-        if board [col] == board[col+3]==board[col+6]==symbol:
+
+    for col in [0, 1, 2]:
+        if board[col] == board[col + 3] == board[col + 6] == symbol:
             return True
 
-        if board [0] == board[4]==board[8]==symbol:
-            return True
-        if board[2] == board[4] == board[6] == symbol:
-            return True
 
-        return False
+    if board[0] == board[4] == board[8] == symbol:
+        return True
+    if board[2] == board[4] == board[6] == symbol:
+        return True
+
+
+    return False
 
