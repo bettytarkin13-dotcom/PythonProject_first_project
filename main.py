@@ -1,4 +1,5 @@
 #First Project 31/03/2026
+
 print("Welcome to Tic-Tac-Toe!")
 print("player x vs player o")
 
@@ -93,6 +94,7 @@ def play_game():
     current_player = 'X'
     while True:
             print_board(board)
+
             move = get_move(current_player,board)
             make_move(board,move,current_player)
 
@@ -116,6 +118,26 @@ while True:
     choice = input("Do you want to play again? (y/n):")
     if choice.lower() != 'y':
         break
+
+x_score = 0
+o_score = 0
+ties=0
+
+while True:
+    result=play_game()
+    if result == 'X':
+        x_score += 1
+    elif result == 'O':
+        o_score += 1
+    else:
+        ties += 1
+
+    print(f"score:x={x_score} , o={o_score} , ties={ties}")
+
+    choice = input("Do you want to play again? (y/n):")
+    if choice.lower() != 'y':
+        break
+
 
 
 
