@@ -1,7 +1,7 @@
 #First Project 31/03/2026
 
 print("Welcome to Tic-Tac-Toe!")
-print("player X vs player O")
+print("player X vs player O\n")
 
 
 def create_board():
@@ -124,10 +124,11 @@ while True:
     else:
         ties += 1
 
-    print(f"score:X={x_score} , O={o_score} , ties={ties}")
+    print(f"\nscore so far:X={x_score} , O={o_score} , ties={ties}\n")
 
     choice = input("Do you want to play again? (y/n):")
     if choice.lower() != 'y':
+        print("Thanks for playing! Goodbye!")
         break
 
 
