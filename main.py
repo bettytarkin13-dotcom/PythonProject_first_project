@@ -80,5 +80,13 @@ def check_tie(board):
             return False
     return True
 
+def play_game():
+    """
+    Main game loop for Tic-Tac-Toe.
+    Create a new board,sets the starting player,
+    and controls the game turns until there is a winner or a tie.
+    """
+    board = create_board()
+    current_player = 'X'
 
 
