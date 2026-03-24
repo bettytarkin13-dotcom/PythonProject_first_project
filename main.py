@@ -86,7 +86,26 @@ def play_game():
     Create a new board,sets the starting player,
     and controls the game turns until there is a winner or a tie.
     """
-    board = create_board()
-    current_player = 'X'
+board = create_board()
+current_player = 'X'
+while True:
+    print_board(board)
+    move = get_move(current_player,board)
+    make_move(board,move,current_player)
+
+    if check_winner(board,current_player):
+            print_board(board)
+            print(f"Player {current_player} wins!")
+            break
+
+    if check_tie(board):
+        print_board(board)
+        print("it's a tie!")
+        break
+
+    if current_player == 'X':
+        current_player = 'O'
+    else:
+        current_player = 'X'
 
 
