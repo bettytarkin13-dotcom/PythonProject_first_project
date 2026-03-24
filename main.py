@@ -69,3 +69,16 @@ def check_winner(board,symbol):
 
     return False
 
+
+def check_tie(board):
+    """
+    check if the board is full and there is no winner .
+    Return True if it is a tie, False otherwise.
+    """
+    for cell in board:
+        if cell.isdigit():
+            return False
+    return True
+
+
+
