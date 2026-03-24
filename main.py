@@ -1,7 +1,7 @@
 #First Project 31/03/2026
 
 print("Welcome to Tic-Tac-Toe!")
-print("player x vs player o")
+print("player X vs player O")
 
 
 def create_board():
@@ -35,7 +35,7 @@ def get_move(player,board):
         choice = input(f"player{player}:choose your move (1-9): ")
         if choice.isdigit():
             pos=int(choice)
-            if 1 <= pos <= 9 and board[pos-1] not in ['x', 'o']:
+            if 1 <= pos <= 9 and board[pos-1] not in ['X', 'O']:
                 return pos
             else:
                 print("spot already taken or the number is out of range")
@@ -101,23 +101,14 @@ def play_game():
             if check_winner(board,current_player):
                print_board(board)
                print(f"🎉 Player {current_player} wins! 🎉")
-               break
+               return current_player
 
             if check_tie(board):
                print_board(board)
                print("🤝 It's a tie! Well played!")
-               break
+               return 'tie'
 
-            if current_player == 'X':
-               current_player = 'O'
-            else:
-                current_player = 'X'
-
-while True:
-    play_game()
-    choice = input("Do you want to play again? (y/n):")
-    if choice.lower() != 'y':
-        break
+            current_player= 'O' if current_player == 'X' else 'X'
 
 x_score = 0
 o_score = 0
@@ -125,6 +116,7 @@ ties=0
 
 while True:
     result=play_game()
+
     if result == 'X':
         x_score += 1
     elif result == 'O':
@@ -132,11 +124,13 @@ while True:
     else:
         ties += 1
 
-    print(f"score:x={x_score} , o={o_score} , ties={ties}")
+    print(f"score:X={x_score} , O={o_score} , ties={ties}")
 
     choice = input("Do you want to play again? (y/n):")
     if choice.lower() != 'y':
         break
+
+
 
 
 
