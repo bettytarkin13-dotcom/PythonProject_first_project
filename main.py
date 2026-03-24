@@ -1,4 +1,7 @@
 #First Project 31/03/2026
+print("Welcome to Tic-Tac-Toe!")
+print("player x vs player o")
+
 
 def create_board():
     """
@@ -95,12 +98,12 @@ def play_game():
 
             if check_winner(board,current_player):
                print_board(board)
-               print(f"Player {current_player} wins!")
+               print(f"🎉 Player {current_player} wins! 🎉")
                break
 
             if check_tie(board):
                print_board(board)
-               print("it's a tie!")
+               print("🤝 It's a tie! Well played!")
                break
 
             if current_player == 'X':
