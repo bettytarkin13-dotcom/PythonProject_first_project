@@ -2,7 +2,7 @@
 
 print("Welcome to Tic-Tac-Toe!")
 print("player X vs player O\n")
-
+print("************Let's go!!!!!******************")
 
 def create_board():
     """
@@ -108,7 +108,10 @@ def play_game():
                print("🤝 It's a tie! Well played!")
                return 'tie'
 
-            current_player= 'O' if current_player == 'X' else 'X'
+            if current_player == 'X':
+                current_player = 'O'
+            else:
+                current_player = 'X'
 
 x_score = 0
 o_score = 0
