@@ -32,7 +32,7 @@ def get_move(player,board):
     Return the valid position chosen by the player (as an int).
     """
     while True:
-        choice = input(f"player{player}:choose your move (1-9): ")
+        choice = input(f"player{player}:player make your move (1-9): ")
         if choice.isdigit():
             pos=int(choice)
             if 1 <= pos <= 9 and board[pos-1] not in ['X', 'O']:
